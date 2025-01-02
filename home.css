@@ -179,6 +179,20 @@ body {
     margin-top: 1.5rem;
 }
 
+.skills {
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    gap: 20px;
+}
+
+.skill {
+    font-size: 0.8em;
+    text-transform: capitalize;
+}
+
 .card {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
@@ -195,15 +209,12 @@ body {
     object-fit: cover;
 }
 
-.card h3 {
-    font-size: 1.5rem;
-    margin: 1rem;
-}
-
 .card ul {
     display: flex;
     font-size: 1rem;
     margin: 1rem;
+    list-style-type: none;
+    gap: 20px;
 }
 
 .card p {
@@ -212,14 +223,25 @@ body {
     padding: 0 1rem 1.5rem;
 }
 
-.card a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
+.card-header, .card-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.card a:hover, .card a:focus {
-    text-decoration: underline;
+.card-header h3 {
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.card-links {
+    margin-right: 20px;
+    gap: 10px;
+}
+
+.card-links a img {
+    width: 30px;
+    height: auto;
 }
 
 .card:hover, .card:focus {
@@ -227,69 +249,10 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-
-/* .scroller {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px 0;
-} */
-
-/* .projects {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 20px;
-}
-
-.card {  
-    margin-right: 10px; 
-    text-align: left;
-    background-color: transparent;
-}
-
-.card img {  
-    width: 30%;
-    height: 60%;
-    border-radius: 20px;
-}  
-
-.card h3 {  
-    padding: 10px;  
-    font-size: 1.5em;  
-    margin: 10px 0;  
-}
-
-.card p a { 
-    color: #007bff;  
-    text-decoration: none;
-}
-
-.card a:hover {
-    text-decoration: underline;
-} */
-
-.contact-section {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav.social-links {
-    display: flex;
-    gap: 10px;
-}
-
-nav.social-links a {
-    text-decoration: none;
-}
-
-nav.social-links a:hover {
-    transform: scale(1.10);
-    transition: transform 0.3s ease-in-out;
-}
-
-footer {
+footer p {
     text-align: center;
+    margin: 100px 150px 0;
+    border-top: 2px solid #7f7f80;
+    font-size: 1rem;
     padding: 20px;
-    color: rgb(245, 10, 10);
 }
