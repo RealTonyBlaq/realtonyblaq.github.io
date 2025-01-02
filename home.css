@@ -181,16 +181,29 @@ body {
 
 .skills {
     text-align: center;
+    background-color: #ebebee;
+    padding: 20px;
 }
 
 .skills-container {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
 }
 
 .skill {
+    display: flex;
+    flex-direction: column;
     font-size: 0.8em;
-    text-transform: capitalize;
+    align-items: center;
+    text-align: center;
+}
+
+.skill img, .skill svg {
+    padding: 10px;
+    width: 70px;
 }
 
 .card {
