@@ -39,17 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
     .catch(err => console.error('Fetch error:', err.message));
-
-  cardScroll.addEventListener('scroll', () => {
-    const cardScroll = document.querySelector('.scroller');
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const scrollRect = cardScroll.getBoundingClientRect();
-
-      const isVisible = rect.right > scrollRect.left && rect.left < scrollRect.right;
-      if (!isVisible) card.classList.add('blurry');
-      else card.classList.remove('blurry');
-    });
-  });
 });
