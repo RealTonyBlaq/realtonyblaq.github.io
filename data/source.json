@@ -1,0 +1,30 @@
+{
+    "Owner": {
+        "name": "Ifeanyi Ikpenyi",
+        "email": "ifeanyiikpenyi@yahoo.com",
+        "github": "https://github.com/RealTonyBlaq"
+    },
+    "logos": {
+        "personal": "",
+        "github": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        "web": "https://upload.wikimedia.org/wikipedia/commons/5/58/Echo_link-blue_icon_slanted.svg"
+    },
+    "projects": [
+        {
+            "name": "WeBlog",
+            "URL": "",
+            "githubURL": "https://github.com/RealTonyBlaq/WeBlog",
+            "description": "A Modern Blog Platform",
+            "imageURL": "./img/weblog.png",
+            "techStack": ["Python", "Flask", "MySQL", "React", "API"]
+        },
+        {
+            "name": "Expense Tracker",
+            "URL": "",
+            "githubURL": "https://github.com/RealTonyBlaq/Expense_tracker",
+            "description": "A web-based expense tracker built with Flask and SQLAlchemy.",
+            "imageURL": "https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NzgzNzZ8MHwxfHNlYXJjaHwzfHxleHBlbnNlJTIwdHJhY2tlcnxlbnwwfHx8fDE3MzIyMTUwMDV8MA&ixlib=rb-4.0.3&q=80&w=400",
+            "techStack": ["Python", "Flask", "SQLITE", "Redis"]
+        }
+    ]
+}
