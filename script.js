@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '#contactMe';
   });
 
+  const showBtn = document.querySelector('.open');
+  const closeBtn = document.querySelector('.close');
+
+  function toggleSideBar () {
+    const sideBar = document.querySelector('.side-bar');
+    if (sideBar.style.display === 'none' || sideBar.style.display === '') {
+      showBtn.style.display = 'none';
+      sideBar.style.display = 'flex';
+    } else {
+      sideBar.style.display = 'none';
+      showBtn.style.display = 'flex';
+    }
+  }
+
+  showBtn.addEventListener('click', () => toggleSideBar());
+  closeBtn.addEventListener('click', () => toggleSideBar());
+
   fetch('./data/source.json')
     .then(response => {
       if (!response.ok) console.error('Network connection error');
