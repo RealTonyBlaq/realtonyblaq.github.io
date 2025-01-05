@@ -411,10 +411,13 @@ footer p {
     .links {
         margin-top: 20px;
         display: flex;
+        align-items: flex-start;
         flex-direction: column;
     }
 
     .link {
+        align-self: right;
+        word-spacing: 10px;
         border-radius: 10px;
     }
 
@@ -490,46 +493,8 @@ footer p {
     }
 }
 
-/* @media (max-width: 480px) {
-    body {
-        font-size: 1.5rem;
-    }
-
-    .top {
-        padding: 15px 10px 0;
-    }
-
-    .intro {
-        padding: 15px;
-    }
-
-    .my-picture {
-        width: 250px;
-        height: 250px;
-    }
-
-    .about p {
-        font-size: 1.2rem;
-    }
-
-    .projects-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .card img {
-        height: 250px;
-    }
-
-    .card-header h3 {
-        font-size: 1.5rem;
-    }
-
-    input, textarea {
-        font-size: 0.8rem;
-    }
-
-    label {
-        font-size: 0.8rem;
+@media (max-width: 480px) {
+    .header-name {
+        font-size: 1rem;
     }
 }
- */
