@@ -12,7 +12,7 @@
     "projects": [
         {
             "name": "WeBlog",
-            "URL": "",
+            "URL": "https://ubonisrael.pythonanywhere.com/",
             "githubURL": "https://github.com/RealTonyBlaq/WeBlog",
             "description": "A Modern Blog Platform",
             "imageURL": "./img/weblog.png",
