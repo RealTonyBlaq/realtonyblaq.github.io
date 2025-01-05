@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('./data/source.json')
     .then(response => {
       if (!response.ok) console.error('Network connection error');
-      else return response.json();
+      return response.json();
     })
     .then(d => {
       const data = d.projects;
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const img = document.createElement('img');
         img.src = project.imageURL;
-        img.alt = `${project.name} logo` || 'logo';
+        img.alt = project.name ? `${project.name} logo` : 'logo';
         img.loading = 'lazy';
 
         const cardHeader = document.createElement('div');
@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       })
       .catch(error => {
+        console.error('Error:', error);
         button.textContent = 'Oops! Error occurred';
         button.style.color = 'red';
         button.style.backgroundColor = 'white';
