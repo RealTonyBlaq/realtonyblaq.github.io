@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <header class="top">
+        <header class="top" id="home">
             <div class="header">
                 <a href="./index.html" class="header-name">
                     <h1>Ifeanyi Ikpenyi</h1>
@@ -19,11 +19,11 @@
                 <a href="#home" class="link">Home</a>
                 <a href="#about" class="link">About</a>
                 <a href="#projects" class="link">Projects</a>
-                <a href="#contact" class="link">Contact</a>
+                <a href="#contactMe" class="link">Contact</a>
             </nav>
         </header>
 
-        <section id="home" class="intro">
+        <section class="intro">
             <div class="intro-content">
                 <div class="whoiam">
                     <h2>Hi, I'm Ifeanyi Ikpenyi.</h2>
@@ -129,59 +129,32 @@
             <h2>My Projects</h2>
             <div class="projects">
                 <!-- Add project cards here -->
-                <div class="card">
-                    <img src="./img/weblog.png" alt="WeBlog" loading="lazy">
-                    <div class="card-header">
-                        <h3>WeBlog</h3>
-                        <div class="card-links">
-                            <a href="https://github.com/RealTonyBlaq/WeBlog" target="_blank">
-                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Repo link">
-                            </a>
-                            <a href="" target="_blank">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Echo_link-blue_icon_slanted.svg" alt="Visit site">
-                            </a>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Python</li>
-                        <li>React</li>
-                        <li>MySQL</li>
-                        <li>Flask</li>
-                        <li>API</li>
-                    </ul>
-                    <p>A Modern Blog Platform</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NzgzNzZ8MHwxfHNlYXJjaHwzfHxleHBlbnNlJTIwdHJhY2tlcnxlbnwwfHx8fDE3MzIyMTUwMDV8MA&ixlib=rb-4.0.3&q=80&w=400" alt="Expense Tracker" loading="lazy">
-                    <div class="card-header">
-                        <h3>Expense Tracker</h3>
-                        <div class="card-links">
-                            <a href="https://github.com/RealTonyBlaq/Expense_tracker" target="_blank">
-                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Repo link">
-                            </a>
-                            <a href="" target="_blank">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Echo_link-blue_icon_slanted.svg" alt="Visit site">
-                            </a>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Python</li>
-                        <li>Redis</li>
-                        <li>MySQL</li>
-                        <li>Flask</li>
-                        <li>API</li>
-                    </ul>
-                    <p>A web-based expense tracker built with Flask and SQLAlchemy.</p>
-                </div>
             </div>
         </section>
 
-        <div class="downPage">
+        <div id="contactMe" class="downPage">
+            <h2>Message Me</h2>
+            <div class="messageMe">
+                <form class="form" action="https://formspree.io/f/mdkkpdwb" method="POST">
+                    <div class="form-left">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="John Stark" required>
+                        <label for="email">Email</label>
+                        <input type="email" name="_replyto" id="replyEmail" placeholder="johnstark@example.com" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject" placeholder="Subject of your message">
+                    </div>
 
+                    <div class="form-left">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Please enter your message here" required></textarea>
+                        <button class="submit" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <footer>
-            <p>&copy; 2025 Ifeanyi Ikpenyi. All rights reserved.</p>
-        </footer>
+
+        <footer></footer>
     </div>
     <script src="./script.js"></script>
 </body>
