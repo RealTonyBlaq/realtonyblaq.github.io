@@ -27,24 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardLinks = document.createElement('div');
         cardLinks.className = 'card-links';
 
-        const gitlink = document.createElement('a');
-        gitlink.href = project.githubURL;
-        gitlink.target = '_blank';
-        const githubIcon = document.createElement('img');
-        githubIcon.src = logos.github;
-        githubIcon.alt = 'github icon';
-        gitlink.appendChild(githubIcon);
+        if (project.githubURL && project.githubURL !== '') {
+          const gitlink = document.createElement('a');
+          gitlink.href = project.githubURL;
+          gitlink.target = '_blank';
+          const githubIcon = document.createElement('img');
+          githubIcon.src = logos.github;
+          githubIcon.alt = 'github icon';
+          gitlink.appendChild(githubIcon);
+          cardLinks.appendChild(gitlink);
+        }
 
-        const weblink = document.createElement('a');
-        weblink.href = project.web;
-        weblink.target = '_blank';
-        const webIcon = document.createElement('img');
-        webIcon.src = logos.web;
-        webIcon.alt = 'web icon';
-        weblink.appendChild(webIcon);
-
-        cardLinks.appendChild(gitlink);
-        cardLinks.appendChild(weblink);
+        if (project.URL && project.URL !== '') {
+          const weblink = document.createElement('a');
+          weblink.href = project.URL;
+          weblink.target = '_blank';
+          const webIcon = document.createElement('img');
+          webIcon.src = logos.web;
+          webIcon.alt = 'web icon';
+          weblink.appendChild(webIcon);
+          cardLinks.appendChild(weblink);
+        }
 
         cardHeader.appendChild(h3);
         cardHeader.appendChild(cardLinks);
@@ -69,52 +72,85 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Fetch error:', err.message));
 
-    const footer = document.querySelector('footer');
-    const p = document.createElement('p');
-    p.textContent = `© ${new Date().getFullYear()} | Designed and developed by Ifeanyi Ikpenyi.`;
-    footer.appendChild(p);
+  const footer = document.querySelector('footer');
+  const p = document.createElement('p');
+  p.textContent = `© ${new Date().getFullYear()} | Designed and developed by Ifeanyi Ikpenyi.`;
+  footer.appendChild(p);
 
-    function adjustTextareaHeight(textarea) {
-      textarea.style.height = "auto";
-      textarea.style.height = `${textarea.scrollHeight}px`;
-    }
+  function adjustTextareaHeight (textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }
 
-    const textarea = document.querySelector('#message');
-    textarea.addEventListener('input', () => {
-        adjustTextareaHeight(textarea);
-    });
+  const textarea = document.querySelector('#message');
+  textarea.addEventListener('input', () => {
+    adjustTextareaHeight(textarea);
+  });
 
-    const form = document.querySelector(".form");
-    async function handleSubmit(event) {
-      event.preventDefault();
-      const status = document.querySelector('.submit');
-      const data = new FormData(event.target);
-      console.log(data);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
+  const form = document.querySelector('.form');
+  async function handleSubmit (event) {
+    event.preventDefault();
+    const button = document.querySelector('.button-text');
+    const data = new FormData(event.target);
+    const sentIcon = document.querySelector('.sent-icon');
+    const errorIcon = document.querySelector('.error-icon');
+    const normalIcon = document.querySelector('.normal-icon');
+    console.log(Object.keys(data));
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: 'application/json'
+      }
+    })
       .then(response => {
         if (response.ok) {
-          status.innerHTML = "Message sent!";
-          form.reset()
+          button.textContent = 'Message sent!';
+          sentIcon.style.display = 'inline';
+          normalIcon.style.display = 'none';
+          errorIcon.style.display = 'none';
+          setTimeout(() => {
+            button.textContent = 'Send Message';
+            button.style.backgroundColor = '#17255A';
+            button.style.color = '#fff';
+            sentIcon.style.display = 'none';
+            errorIcon.style.display = 'none';
+            normalIcon.style.display = 'inline';
+            form.reset();
+          }, 5000);
         } else {
-          response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-            console.log(`Error=> ${data["errors"]}`);
-            } else {
-                status.innerHTML = "Oops! Error occurred";
-            }
-            })
+          button.textContent = 'Oops! Error occurred';
+          button.style.color = 'red';
+          button.style.backgroundColor = 'white';
+          sentIcon.style.display = 'none';
+          normalIcon.style.display = 'none';
+          errorIcon.style.display = 'inline';
+          setTimeout(() => {
+            button.textContent = 'Send Message';
+            button.style.backgroundColor = '#17255A';
+            button.style.color = '#fff';
+            sentIcon.style.display = 'none';
+            errorIcon.style.display = 'none';
+            normalIcon.style.display = 'inline';
+          }, 5000);
         }
-        })
-        .catch(error => {
-        status.innerHTML = "Oops! Error occurred";
-        });
-    }
-    form.addEventListener("submit", handleSubmit);
+      })
+      .catch(error => {
+        button.textContent = 'Oops! Error occurred';
+        button.style.color = 'red';
+        button.style.backgroundColor = 'white';
+        sentIcon.style.display = 'none';
+        normalIcon.style.display = 'none';
+        errorIcon.style.display = 'inline';
+        setTimeout(() => {
+          button.textContent = 'Send Message';
+          button.style.backgroundColor = '#17255A';
+          button.style.color = '#fff';
+          sentIcon.style.display = 'none';
+          errorIcon.style.display = 'none';
+          normalIcon.style.display = 'inline';
+        }, 5000);
+      });
+  }
+  form.addEventListener('submit', handleSubmit);
 });
