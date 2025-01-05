@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 50px 0;
     background-color: #fff;
 }
 
@@ -32,17 +32,16 @@ body {
     font-weight: bold;
     color: #17255A;
     text-transform: uppercase;
-    transition: color 0.3s ease;
 }
 
 .header-name:hover, .header-name:focus {
-    opacity: 0.6;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .links {
     display: flex;
     gap: 20px;
-    border-bottom: 1px solid rgb(168, 144, 8);
 }
 
 .link {
@@ -54,17 +53,9 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.link:visited {
-    color: purple;
-}
-
 .link:hover, .link:focus {
     background-color: rgb(168, 144, 8);
     color: aliceblue;
-}
-
-.link:active {
-    color: red;
 }
 
 .intro {
@@ -306,18 +297,21 @@ label {
 }
 
 input, textarea {
+    font-family: 'monospace';
+    font-size: 1rem;
     border: 1px solid #697191;
     background-color: #ebebee;
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 10px;
     max-width: 100%;
-    height: 40px;
+    height: 50px;
     box-sizing: border-box;
 }
 
 textarea {
     min-height: 200px;
+    line-height: 1.5;
     resize: vertical;
     overflow-y: hidden;
     transition: height 0.2s ease-in-out;
@@ -328,17 +322,32 @@ input:focus, textarea:focus {
     box-shadow: 0 0 4px #17255A;
 }
 
+.submit-btn {
+    align-self: flex-end;
+}
+
 .submit {
-    padding: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
     background-color: #17255A;
     color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
-    align-self: flex-end;
     width: fit-content;
     box-shadow: 0 0 4px rgba(0, 32, 110, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit svg {
+    width: 15px;
+}
+
+.sent-icon, .error-icon {
+    display: none;
 }
 
 .submit:hover, .submit:focus {
@@ -346,11 +355,12 @@ input:focus, textarea:focus {
     background-color: #fff;
     border: 1px solid #17255A;
     outline: none;
+    transform: scale(1.03);
 }
 
 footer p {
     text-align: center;
-    margin: 100px 150px 0;
+    margin: 50px 150px 0;
     border-top: 2px solid #7f7f80;
     font-size: 1rem;
     padding: 20px;
