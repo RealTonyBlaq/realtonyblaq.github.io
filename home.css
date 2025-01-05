@@ -179,8 +179,8 @@ body {
 }
 
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
     gap: 30px;
     padding: 20px;
     justify-content: center;
@@ -393,7 +393,7 @@ footer p {
         background-color: white;
         top: 0;
         right: 0;
-        width: 40%;
+        width: 50%;
         height: 100%;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         transition: display 0.5s ease-in;
@@ -429,7 +429,7 @@ footer p {
         flex-direction: column-reverse;
     }
 
-    .whoiam {
+    .socials, .button-container {
         text-align: center;
     }
 
