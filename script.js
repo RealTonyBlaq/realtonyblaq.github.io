@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const connectButton = document.querySelector('.button');
+  connectButton.addEventListener('click', () => {
+    window.location.href = '#contactMe';
+  });
+
   fetch('./data/source.json')
     .then(response => {
       if (!response.ok) console.error('Network connection error');
