@@ -127,7 +127,7 @@ body {
     height: 480px;
     border-radius: 50%;
     background-position: center top;
-    background-image: url('https://avatars.githubusercontent.com/u/132378140?v=4');
+    background-image: url('./img/Self.JPG');
     background-size: cover;
     border: 2px solid rgb(168, 144, 8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
